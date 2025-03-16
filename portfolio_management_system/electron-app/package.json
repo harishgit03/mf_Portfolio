@@ -1,0 +1,21 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gopinath",
+  "license": "ISC",
+  "description": "Investfolio Management System",
+  "devDependencies": {
+    "electron": "^35.0.0"
+  },
+  "build": {
+    "win": {
+      "icon": "asset/coinimage.ico"
+    }
+  }
+}
