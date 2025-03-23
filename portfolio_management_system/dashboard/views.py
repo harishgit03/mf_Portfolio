@@ -9,7 +9,6 @@ from django.conf import settings
 from .models import Portfolio, StockHolding
 from riskprofile.models import RiskProfile
 from riskprofile.views import risk_profile
-
 # AlphaVantage API
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.fundamentaldata import FundamentalData
@@ -74,11 +73,31 @@ def dashboard(request):
       'sectors': sectors,
       'news': None
     }
-
+    if request.user.is_staff:
+      return render(request, 'dashboard/ad_dashboard.html', context)
     return render(request, 'dashboard/dashboard.html', context)
   else:
     return redirect(risk_profile)
 
+def fetch_holdings(request):
+  portfolio = Portfolio.objects.get(user=request.user)
+  holding_companies = StockHolding.objects.filter(portfolio=portfolio)
+  holdings = []
+  for c in holding_companies:
+    company_symbol = c.company_symbol
+    company_name = c.company_name
+    number_shares = c.number_of_shares
+    investment_amount = c.investment_amount
+    average_cost = investment_amount / number_shares
+    holdings.append({
+      'CompanySymbol': company_symbol,
+      'CompanyName': company_name,
+      'NumberShares': number_shares,
+      'InvestmentAmount': investment_amount,
+      'AverageCost': average_cost,
+    })
+
+  return JsonResponse({"holdings": holdings})
 
 def get_portfolio_insights(request):
   try:
@@ -163,9 +182,9 @@ def add_holding(request):
       ts = TimeSeries(key=get_alphavantage_key(), output_format='json')
       data, meta_data = ts.get_daily(symbol=company_symbol+'.BSE', outputsize='full')
       buy_price = float(data[request.POST['date']]['4. close'])
-      fd = FundamentalData(key=get_alphavantage_key(), output_format='json')
-      data, meta_data = fd.get_company_overview(symbol=company_symbol)
-      sector = data['Sector']
+      # fd = FundamentalData(key=get_alphavantage_key(), output_format='json')
+      # data, meta_data = fd.get_company_overview(symbol=company_symbol)
+      # sector = data['Sector']
 
       found = False
       for c in holding_companies:
@@ -180,7 +199,7 @@ def add_holding(request):
           company_name=company_name, 
           company_symbol=company_symbol,
           number_of_shares=number_stocks,
-          sector=sector
+          # sector=
         )
         c.buying_value.append([buy_price, number_stocks])
         c.save()
@@ -228,6 +247,15 @@ def fetch_news():
 
 
 def backtesting(request):
+  print('Function Called')
+  try:
+    output = sp.check_output("quantdom", shell=True)
+  except sp.CalledProcessError:
+    output = 'No such command'
+  return HttpResponse("Success")
+
+
+def sign_up_new(request):
   print('Function Called')
   try:
     output = sp.check_output("quantdom", shell=True)

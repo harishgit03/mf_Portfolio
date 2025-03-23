@@ -111,10 +111,10 @@
                             <a href="{% url 'home' %}" class="logo logo-light">
                                 <span class="logo-sm">
                                     {% comment %} <img src="{% static 'dashboard/images/logo-sm.png' %}" alt="" height="30"> {% endcomment %}
-                                    <h2 style="color: white;">Nest Builders</h2>
+                                    <h2 style="color: white;">NB Admin</h2>
                                 </span>
                                 <span class="logo-lg">
-                                    <h2 style="color: white;">Nest Builders</h2>
+                                    <h2 style="color: white;">NB Admin</h2>
                                     {% comment %} <img src="{% static 'dashboard/images/logo-light.png' %}" alt="" height="30"> {% endcomment %}
                                 </span>
                             </a>
@@ -134,7 +134,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                                 aria-labelledby="page-header-search-dropdown">
-                    
+
                                 <form class="p-2">
                                     <div class="form-group m-0">
                                         <div class="input-group">
@@ -279,22 +279,17 @@
                                 <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="uil uil-sign-out-alt font-size-18 align-middle mr-1 text-muted"></i> <span class="align-middle">Sign out</span></a>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
                 <div class="container-fluid">
                     <div class="topnav">
-                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">    
+                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
                             <div class="collapse navbar-collapse" id="topnav-menu-content">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a class="nav-link" onclick="openTab(event, 'investment-overview')" id="defaultOpen">
-                                            <i class="uil-dollar-alt mr-2"></i> Dashboard
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" onclick="openTab(event, 'recommendations')">
-                                            <i class="uil-clock mr-2"></i> Master Portfolio
+                                            <i class="uil-dollar-alt mr-2"></i> Investment Overview
                                         </a>
                                     </li>
 
@@ -303,43 +298,20 @@
                                             <i class="uil-briefcase-alt mr-2"></i> Reports
                                         </a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" onclick="openTab(event, 'performance-report')">Current Portfolio</a>
-                                            <a class="dropdown-item" onclick="openTab(event, 'portfolio-insights')">Investment Summary</a>
-                                            <a class="dropdown-item" onclick="openTab(event, 'performance-report')">Transactions</a>
+                                            <a class="dropdown-item" onclick="openTab(event, 'portfolio-insights')">Portfolio Insights</a>
+                                            <a class="dropdown-item" onclick="openTab(event, 'performance-report')">Performance Report</a>
                                         </div>
                                     </li>
 
-
-
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" onclick="openTab(event, 'recommendations')">
-                                            <i class="uil-search mr-2"></i> Analytics
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="openTab(event, 'recommendations')">
+                                            <i class="uil-clock mr-2"></i> Analytics
                                         </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" onclick="openTab(event, 'performance-report')">Portfolio Analysis</a>
-                                            <a class="dropdown-item" onclick="openTab(event, 'portfolio-insights')">Funds Performance</a>
-                                        </div>
                                     </li>
+
                                     <li class="nav-item">
                                         <a class="nav-link" onclick="openTab(event, 'recommendations')">
                                             <i class="uil-search mr-2"></i> MF Research
-                                        </a>
-                                    </li>
-                                     <li class="nav-item">
-                                        <a class="nav-link" onclick="openTab(event, 'recommendations')">
-                                            <i class="uil-thumbs-up mr-2"></i> Recommendations
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" onclick="openTab(event, 'news')">
-                                            <i class="uil-newspaper mr-2"></i> Invest Online
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" onclick="openTab(event, 'backtesting')">
-                                            <i class="uil-cog mr-2"></i> Multi Assets
                                         </a>
                                     </li>
 
@@ -348,14 +320,32 @@
                                             <i class="uil-envelope mr-2"></i> E-KYC
                                         </a>
                                     </li>
-     
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="openTab(event, 'recommendations')">
+                                            <i class="uil-thumbs-up mr-2"></i> Recommendations
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="openTab(event, 'news')">
+                                            <i class="uil-newspaper mr-2"></i> News
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="openTab(event, 'backtesting')">
+                                            <i class="uil-cog mr-2"></i> Backtesting
+                                        </a>
+                                    </li>
+
                                 </ul>
                             </div>
                         </nav>
                     </div>
                 </div>
             </header>
-    
+
             <!-- Investment Overview -->
             <div id="investment-overview" class="tabcontent">
                 <div class="main-content">
@@ -418,52 +408,9 @@
 <!--                                    </div>-->
 <!--                                </div>-->
 <!--                            </div>-->
-                            <div class="row">
-                                 <div class="news-ticker">
-                                    <div class="news-content-wrapper">
-                                        <div class="news-content">
-                                            <span>🔥 Breaking News: Stock Market Hits Record Highs!</span>
-                                            <span>🌍 Global Update: Climate Summit Begins Today!</span>
-                                            <span>💰 Finance: Mutual Fund Investments on the Rise!</span>
-                                            <span>⚽ Sports: Football Finals Set for This Weekend!</span>
-                                            <span>🚀 Tech: AI Advancements in 2025 Are Stunning!</span>
-                                        </div>
-                                        <div class="news-content">  <!-- Duplicate for smooth effect -->
-                                            <span>🔥 Breaking News: Stock Market Hits Record Highs!</span>
-                                            <span>🌍 Global Update: Climate Summit Begins Today!</span>
-                                            <span>💰 Finance: Mutual Fund Investments on the Rise!</span>
-                                            <span>⚽ Sports: Football Finals Set for This Weekend!</span>
-                                            <span>🚀 Tech: AI Advancements in 2025 Are Stunning!</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-<!--                            <div class="row">-->
-<!--                                <div id="carouselExampleAutoplaying" class="carousel slide" data-ride="carousel">-->
-<!--                                    <div class="carousel-inner">-->
-<!--                                        <div class="carousel-item active">-->
-<!--                                            <p><span>🚀 Tech: AI Advancements in 2025 Are Stunning!</span></p>-->
-<!--                                        </div>-->
-<!--                                        <div class="carousel-item">-->
-<!--                                            <p><span>⚽ Sports: Football Finals Set for This Weekend!</span></p>-->
-<!--                                        </div>-->
-<!--                                        <div class="carousel-item">-->
-<!--                                            <p><span>💰 Finance: Mutual Fund Investments on the Rise!</span></p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <a class="carousel-control-prev" href="#carouselExampleAutoplaying" role="button" data-slide="prev">-->
-<!--                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                                        <span class="sr-only">Previous</span>-->
-<!--                                    </a>-->
-<!--                                    <a class="carousel-control-next" href="#carouselExampleAutoplaying" role="button" data-slide="next">-->
-<!--                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                                        <span class="sr-only">Next</span>-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
 
                             <div class="row">
-                                <div class="col-sm-12 col-md-4 col-xl-4">
+                                <div class="col-md-6 col-xl-3">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="float-right mt-2">
@@ -471,163 +418,202 @@
                                             </div>
                                             <div>
                                                 <h5 class="mb-1 mt-1">₹ <span data-plugin="counterup">{{ totalInvestment | floatformat:2 }}</span></h5>
-                                                <p class="text-muted mb-0">Total Investment</p>
+                                                <p class="text-muted mb-0">Total AUM Amount</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
 
-<!--                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">-->
-<!--                                    <div class="card">-->
-<!--                                        <div class="card-body text-center">-->
-<!--                                            <div>-->
-<!--                                                <h5 class="mb-1 mt-1" id="current-value">₹ <span data-plugin="counterup">15748</span></h5>-->
-<!--                                                <p class="text-muted mb-0">Mutual Fund</p>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div> &lt;!&ndash; end col&ndash;&gt;-->
-
-<!--                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">-->
-<!--                                    <div class="card">-->
-<!--                                        <div class="card-body text-center">-->
-<!--                                            <div>-->
-<!--                                                <h5 class="mb-1 mt-1" style="color:#34c38f;" id="unrealized-pnl">₹ <span data-plugin="counterup">9475378</span></h5>-->
-<!--                                                <p class="text-muted mb-0">MF Current Cost</p>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div> &lt;!&ndash; end col&ndash;&gt;-->
-
-                                <div class="col-12 col-sm-12 col-md-8 col-xl-4">
+                                <div class="col-md-6 col-xl-3">
                                     <div class="card">
-                                        <div class="card-body text-center d-flex">
-                                            <div class="w-50" style="border-right: 2px solid #dee2e6;">
-                                                <h5 class="mb-1 mt-1" id="current-value">₹ <span data-plugin="counterup">45,15,748.00</span></h5>
-                                                <p class="text-muted mb-0">Mutual Fund</p>
+                                        <div class="card-body">
+                                            <div class="float-right mt-2">
+                                                <div id="current-value-chart"></div>
                                             </div>
-                                            <div class="w-50">
-                                                <h5 class="mb-1 mt-1" style="color:#34c38f;" id="unrealized-pnl">₹ <span data-plugin="counterup">94,75,378.67</span></h5>
-                                                <p class="text-muted mb-0">MF Current Cost</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-6 col-sm-6 col-md-6 col-xl-2">
-
-                                    <div class="card">
-                                        <div class="card-body text-center">
-<!--                                            <div class="float-right mt-2">-->
-<!--                                                <div id="growth-chart"></div>-->
-<!--                                            </div>-->
                                             <div>
-                                                <h5 class="mb-1 mt-1" style="color:#34c38f;" id="growth">₹ <span data-plugin="counterup">2,23,700.84</span></h5>
-                                                <p class="text-muted mb-0">Unreleased Gain</p>
+                                                <h5 class="mb-1 mt-1" id="current-value">₹ <span data-plugin="counterup">Current Value</span></h5>
+                                                <p class="text-muted mb-0">Current Value</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
-                                <div class="col-6 col-sm-6 col-md-6 col-xl-2">
+
+                                <div class="col-md-6 col-xl-3">
                                     <div class="card">
-                                        <div class="card-body text-center">
+                                        <div class="card-body">
+                                            <div class="float-right mt-2">
+                                                <div id="pnl-chart"></div>
+                                            </div>
+                                            <div>
+                                                <h5 class="mb-1 mt-1" style="color:#34c38f;" id="unrealized-pnl"><span data-plugin="counterup">Unrealized P&L</span></h5>
+                                                <p class="text-muted mb-0">Unrealized P&L</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col-->
+
+                                <div class="col-md-6 col-xl-3">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="float-right mt-2">
+                                                <div id="growth-chart"></div>
+                                            </div>
+                                            <div>
+                                                <h5 class="mb-1 mt-1" style="color:#34c38f;" id="growth"><span data-plugin="counterup">Growth</span> %</h5>
+                                                <p class="text-muted mb-0">Growth</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col-->
+                            </div> <!-- end row-->
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">
+                                    <div class="card">
+                                        <div class="card-body text-center" style="background-color:#d6eeff;border:2px solid #62beff">
 <!--                                            <div class="float-right mt-2">-->
 <!--                                                <div id="total-investment-chart"></div>-->
 <!--                                            </div>-->
                                             <div>
-                                                <h5 class="mb-1 mt-1">₹ <span data-plugin="counterup">0.00</span></h5>
-                                                <p class="text-muted mb-0">Released Gain</p>
+                                                <h5 class="mb-1 mt-1"><span data-plugin="counterup">1028</span></h5>
+                                                <p class="text-muted mb-0">No of Investors</p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div> <!-- end row-->
-                            <div class="row">
+                                </div> <!-- end col-->
 
-                                <div class="col-sm-4 col-md-4 col-xl-2">
+                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">
                                     <div class="card">
-                                        <div class="card-body text-center">
+                                        <div class="card-body text-center" style="background-color:#d6eeff;border:2px solid #62beff">
 <!--                                            <div class="float-right mt-2">-->
 <!--                                                <div id="current-value-chart"></div>-->
 <!--                                            </div>-->
                                             <div>
-                                                <h5 class="mb-1 mt-1" id="current-value"> <span data-plugin="counterup">101.5</span>%</h5>
-                                                <p class="text-muted mb-0">Abs Return (MF)</p>
+                                                <h5 class="mb-1 mt-1" id="current-value"> <span data-plugin="counterup">174</span></h5>
+                                                <p class="text-muted mb-0">No of Families</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
 
-                                <div class="col-sm-4 col-md-4 col-xl-2">
+                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">
                                     <div class="card">
-                                        <div class="card-body text-center">
+                                        <div class="card-body text-center" style="background-color:#d6eeff;border:2px solid #62beff">
 <!--                                            <div class="float-right mt-2">-->
 <!--                                                <div id="pnl-chart"></div>-->
 <!--                                            </div>-->
                                             <div>
-                                                <h5 class="mb-1 mt-1" id="unrealized-pnl"><span data-plugin="counterup">22</span>%</h5>
-                                                <p class="text-muted mb-0">XIRR Return (MF)</p>
+                                                <h5 class="mb-1 mt-1" id="unrealized-pnl"><span data-plugin="counterup">59</span></h5>
+                                                <p class="text-muted mb-0">No of ELSS Investors</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
 
-                                <div class="col-sm-4 col-md-4 col-xl-2">
+                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">
+
                                     <div class="card">
-                                        <div class="card-body text-center">
+                                        <div class="card-body text-center" style="background-color:#e1d2f7;border:2px solid #a76bff">
 <!--                                            <div class="float-right mt-2">-->
 <!--                                                <div id="growth-chart"></div>-->
 <!--                                            </div>-->
                                             <div>
-                                                <h5 class="mb-1 mt-1" style="color:#34c38f;" id="growth"><span data-plugin="counterup">+ 34,236.03</span></h5>
-                                                <p class="text-muted mb-0">Today Change 📈</p>
+                                                <h5 class="mb-1 mt-1" id="growth"><span data-plugin="counterup">550</span></h5>
+                                                <p class="text-muted mb-0">No of SIP Count</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">
+
+                                    <div class="card">
+                                        <div class="card-body text-center" style="background-color:#e1d2f7;border:2px solid #a76bff">
+<!--                                            <div class="float-right mt-2">-->
+<!--                                                <div id="growth-chart"></div>-->
+<!--                                            </div>-->
+                                            <div>
+                                                <h5 class="mb-1 mt-1" id="growth">₹ <span data-plugin="counterup">178000</span></h5>
+                                                <p class="text-muted mb-0">SIP amount</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-4 col-xl-2">
+
+                                    <div class="card">
+                                        <div class="card-body text-center" style="background-color:#e1d2f7;border:2px solid #a76bff">
+<!--                                            <div class="float-right mt-2">-->
+<!--                                                <div id="growth-chart"></div>-->
+<!--                                            </div>-->
+                                            <div>
+                                                <h5 class="mb-1 mt-1" id="growth">₹ <span data-plugin="counterup">5500</span></h5>
+                                                <p class="text-muted mb-0">Average SIP Amount</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col-->
-                                <div class="col-md-12 col-xl-6 mb-4">
-                                    <div class="card h-100 d-flex flex-column">
-                                        <p class="card-title mt-1 ml-2">Messages</p>
-<!--                                        <div id="risk-meter"></div>-->
-                                        <div id="carouselExampleAutoplaying" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner ml-4 mt-2">
-                                                <div class="carousel-item">
-                                                    <p><span>🏡 Home Purchase Goal: You're 40% closer to your investment goal! Keep investing regularly.</span></p>
-                                                </div>
-                                                <div class="carousel-item active">
-                                                    <p><span>🔔 SIP Reminder: Your SIP in HDFC Wealth Fund is due tomorrow.</span></p>
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <p><span>⚠️ Payment Alert: Your SIP auto-debit failed! Please update your bank details to continue.</span></p>
-                                                </div>
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleAutoplaying" role="button" data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#carouselExampleAutoplaying" role="button" data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
+                            </div> <!-- end row-->
+
+<!--                            <div class="container mt-4">-->
+                                <div class="summary-container">
+                                    <!-- Header with Button Group -->
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="summary-header">Transaction Summary</span>
+                                        <div class="btn-group">
+                                            <button class="btn btn-light active">3 Days</button>
+                                            <button class="btn btn-light">7 Days</button>
+                                            <button class="btn btn-light">10 Days</button>
+                                            <button class="btn btn-light">30 Days</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Transaction Summary Items -->
+                                    <div class="row text-center">
+                                        <div class="col-md-4 col-sm-6 col-12 summary-item">
+                                            <h6>Lumpsum Purchase</h6>
+                                            <p>₹ 0</p>
+                                            <a href="#" class="text-primary">0 Transactions</a>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-12 summary-item">
+                                            <h6>SIP Purchase</h6>
+                                            <p>₹ 0</p>
+                                            <a href="#" class="text-primary">0 Transactions</a>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-12 summary-item">
+                                            <h6>Redemption</h6>
+                                            <p>₹ 0</p>
+                                            <a href="#" class="text-primary">0 Transactions</a>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-12 summary-item">
+                                            <h6>Rejection</h6>
+                                            <p>₹ 0</p>
+                                            <a href="#" class="text-primary">0 Transactions</a>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-12 summary-item">
+                                            <h6>No of New Investors</h6>
+                                            <p class="text-primary">2</p>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 col-12 summary-item">
+                                            <h6>New SIP Investments</h6>
+                                            <p>₹ 0</p>
+                                            <a href="#" class="text-primary">0 SIPs</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!-- end row-->
+<!--                            </div>-->
 
                             <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="card">
-                                        <p class="card-title mt-1 ml-2">Mutual Fund Investments VS Returns</p>
-                                        <div id="chart-amt">
+                                        <div id="chartyears">
 <!--                                            <canvas id="account-chart-container" style="display: block; height: 300px; padding: 20px;" class="chartjs-render-monitor"></canvas>-->
 <!--                                            <div class="font-weight-bold text-center mb-4" style="font-size: 16px; z-index: 1001">Account</div>-->
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                <div class="col-md-4 col-sm-12">
                                     <div class="card">
-                                        <p class="card-title mt-1 ml-2">AMC Wise Asset Allocation</p>
-                                        <div id="chart-amc">
+                                        <div id="donut-chart-new">
 <!--                                            <canvas id="sector-chart-container" style="display: block; height: 300px; padding: 20px;" class="chartjs-render-monitor"></canvas>-->
 <!--                                            <canvas id="bar-chart" style="display: block;height: 300px; padding: 20px;" class="chartjs-render-monitor"></canvas>-->
 <!--                                            <script>-->
@@ -648,21 +634,23 @@
                                         </div>
                                     </div>
                                 </div>
-<!--                                <div class="col-md-4 col-sm-12">-->
-<!--                                    <div class="card">-->
-<!--                                        <div id="risk-meter">-->
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="card">
+                                        <div id="radio-chart">
 <!--                                            <canvas id="stock-chart-container" style="display: block; height: 300px; padding: 20px;" class="chartjs-render-monitor"></canvas>-->
 <!--                                            <div class="font-weight-bold text-center mb-4" style="font-size: 16px; z-index: 1001">Stocks</div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                                        </div>
+                                    </div>
+                                </div>
                             </div> <!-- end row-->
+
+
 
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title mb-4">Recent Activity
+                                            <h4 class="card-title mb-4">Your Holdings
                                             <button
                                                 style="float: right; margin-bottom: 10px; background-color: #50a5f1; border-color: #50a5f1;"
                                                 type="button" class="btn btn-primary btn-sm-12 btn-md-6 btn-rounded waves-effect waves-light"
@@ -716,32 +704,31 @@
                                                 <table class="table table-centered table-nowrap mb-0" id="portfolio-table">
                                                     <thead class="thead-light">
                                                         <tr>
-                                                            <th class="text-center">Scheme</th>
-                                                            <th class="text-center">Folio No</th>
-                                                            <th class="text-center">Tran Date</th>
-                                                            <th class="text-center">Tran Type</th>
-                                                            <th class="text-center">Amount</th>
-                                                            <th class="text-center">NAV</th>
-                                                            <th class="text-center">Units</th>
-<!--                                                            <th class="text-center">Details</th>-->
+                                                            <th class="text-center">Company Name</th>
+                                                            <th class="text-center">Number of Shares</th>
+                                                            <th class="text-center">Average Cost</th>
+                                                            <th class="text-center">Last Trading Price (LTP)</th>
+                                                            <th class="text-center">Invested Amount</th>
+                                                            <th class="text-center" class="font-weight-bold">P&L</th>
+                                                            <th class="text-center">Net Change</th>
+                                                            <th class="text-center">Details</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         {% for c in holdings %}
                                                         <tr id="{{ c.CompanySymbol }}">
                                                             <td class="text-body font-weight-bold">
-<!--                                                                <div class="tradingview-widget-container">-->
-<!--                                                                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>-->
-<!--                                                                        {-->
-<!--                                                                            "symbol": "NSE:{{c.CompanySymbol}}",-->
-<!--                                                                            "width": 350,-->
-<!--                                                                            "colorTheme": "light",-->
-<!--                                                                            "isTransparent": true,-->
-<!--                                                                            "locale": "in"-->
-<!--                                                                        }-->
-<!--                                                                    </script>-->
-<!--                                                                </div>-->
-                                                                {{c.CompanyName}}
+                                                                <div class="tradingview-widget-container">
+                                                                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                                                        {
+                                                                            "symbol": "NSE:{{c.CompanySymbol}}",
+                                                                            "width": 350,
+                                                                            "colorTheme": "light",
+                                                                            "isTransparent": true,
+                                                                            "locale": "in"
+                                                                        }
+                                                                    </script>
+                                                                </div>
                                                             </td>
                                                             <td class="text-center">{{ c.NumberShares }}</td>
                                                             <td class="text-center">₹ {{ c.AverageCost | floatformat:2 }}</td>
@@ -749,13 +736,13 @@
                                                             <td class="text-center">₹ {{ c.InvestmentAmount | floatformat:2 }}</td>
                                                             <td class="text-center">PNL</td>
                                                             <td class="text-center">Net Change</td>
-<!--                                                            <td class="text-center">-->
-<!--                                                                <button-->
-<!--                                                                    type="button" class="btn btn-primary btn-md btn-rounded waves-effect waves-light"-->
-<!--                                                                    data-toggle="modal" data-target="#stockdetails-{{ c.CompanySymbol }}" onclick="getFinancials('{{ c.CompanySymbol }}')">-->
-<!--                                                                    View Details-->
-<!--                                                                </button>-->
-<!--                                                            </td>-->
+                                                            <td class="text-center">
+                                                                <button
+                                                                    type="button" class="btn btn-primary btn-md btn-rounded waves-effect waves-light"
+                                                                    data-toggle="modal" data-target="#stockdetails-{{ c.CompanySymbol }}" onclick="getFinancials('{{ c.CompanySymbol }}')">
+                                                                    View Details
+                                                                </button>
+                                                            </td>
                                                         </tr>
                                                         {% endfor %}
                                                     </tbody>
@@ -827,65 +814,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- end row -->
                             <div class="row">
-                                <div class="col-md-6 col-xl-4">
-                                    <div class="card h-100 d-flex flex-column">
+                                <div class="col-md-6 col-xl-6">
+                                    <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title mb-4">Top Sectors</h4>
+                                            <h4 class="card-title mb-4">Top Investors</h4>
                                             <div class="table-responsive">
                                                 <table class="table table-centered table-nowrap mb-0" id="portfolio-table">
                                                     <thead class="thead-light">
                                                         <tr>
-                                                            <th class="text-center">Sector Name</th>
-                                                            <th class="text-center">Percentage</th>
+                                                            <th class="text-center">Investor Name</th>
+                                                            <th class="text-center">Pan No</th>
+                                                            <th class="text-center">Amount</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                       <tr>
-                                                        <td>Technology</td>
-                                                        <td class="text-right">35%</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Pharmaceuticals</td>
-                                                        <td class="text-right">25%</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Banking & Finance</td>
-                                                        <td class="text-right">20%</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Consumer Goods</td>
-                                                        <td class="text-right">15%</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Automobile</td>
-                                                        <td class="text-right">10%</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Energy</td>
-                                                        <td class="text-right">8%</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Infrastructure</td>
-                                                        <td class="text-right">5%</td>
-                                                      </tr>
-
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 col-xl-4">
-                                    <div class="card  h-100 d-flex flex-column">
-                                        <p class="card-title mt-1 ml-2">Category Wise Asset Allocation</p>
-                                        <div id="chart-cat">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-xl-4">
-                                    <div class="card  h-100 d-flex flex-column">
+                                </div><div class="col-md-6 col-xl-6">
+                                    <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title mb-4">Top Schemes</h4>
                                             <div class="table-responsive">
@@ -893,45 +843,19 @@
                                                     <thead class="thead-light">
                                                         <tr>
                                                             <th class="text-center">Scheme Name</th>
+                                                            <th class="text-center">Number of Investors</th>
                                                             <th class="text-center">Total Amount Invested</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>Bluechip Equity Fund</td>
-                                                        <td class="text-right">₹85,000</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Midcap Opportunities Fund</td>
-                                                        <td class="text-right">₹65,000</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Contra Fund</td>
-                                                        <td class="text-right">₹55,000</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>ELSS Tax Saver Fund</td>
-                                                        <td class="text-right">₹45,000</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Small Cap Fund</td>
-                                                        <td class="text-right">₹30,000</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Arbitrage Fund</td>
-                                                        <td class="text-right">₹25,000</td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Liquid Fund</td>
-                                                        <td class="text-right">₹20,000</td>
-                                                      </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- end row -->
+                            </div>
+                            <!-- end row -->
                         </div> <!-- container-fluid -->
                     </div>
                     <!-- End Page-content -->
@@ -1724,7 +1648,7 @@
             $(document).ready(function() {
                $.ajax({
                     type: "GET",
-                    url: "/das/company-list",
+                    url: "/company-list",
                     dataType: "json",
                     success: function(data) { processData(data["data"]); }
                 });

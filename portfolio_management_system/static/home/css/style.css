@@ -81,15 +81,15 @@
   overflow: hidden;
 }
 #loader {
-  background: url(../images/1.gif);
-  width: 64px;
-  height: 64px;
+  color: black;
+  width: 300px;
+  height: 264px;
   position: relative;
   top: 50%;
   margin: -32px auto 0 auto;
 }
 /*** 
-
+  background: url(../images/1.gif);
 ====================================================================
   Click To Top
 ====================================================================

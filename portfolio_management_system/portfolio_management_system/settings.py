@@ -66,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'Middleware.com_middleware.CustomSignupMiddleware'
 ]
 
 ROOT_URLCONF = 'portfolio_management_system.urls'
@@ -186,8 +187,13 @@ SOCIALACCOUNT_PROVIDERS = {
 # Email Backend - Currently set at console/terminal
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # Users can log in with username or email
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+LOGIN_URL = "/accounts/login/"
 # Custom Settings - allauth
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/das/dashboard"
 
 # Alphavantage key
 ALPHAVANTAGE_KEY1 = str(os.getenv('ALPHAVANTAGE_KEY1'))

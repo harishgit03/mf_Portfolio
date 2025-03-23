@@ -9,4 +9,6 @@ urlpatterns = [
     path('add-holding', views.add_holding, name="add-holding"),
     path('get-portfolio-insights', views.get_portfolio_insights, name="get-portfolio-insights"),
     path('backtesting', views.backtesting, name="backtesting"),
+    path('sign_up_new', views.sign_up_new, name="sign_up_new"),
+    path('fetch_holdings/', views.fetch_holdings, name="fetch_holdings"),
 ]
